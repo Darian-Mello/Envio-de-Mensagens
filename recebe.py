@@ -12,9 +12,9 @@ def recebe_mensagem (sock):
         tempo = time.time_ns()
         print(f"mensagem recebida: {msg}, Timestamp: {tempo}\n")
         with open(f"mensagens.txt", "a") as file:
-            file.write(f"{msg}, Timestamp: {tempo}\n")
+            file.write(f"{msg}-{tempo}\n")
 
-enderecos = [("127.0.0.1", 5000), ("127.0.0.1", 5001)]
+enderecos = [("", 5000), ("", 5001)]
 
 for e in enderecos:
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
